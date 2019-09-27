@@ -17,13 +17,16 @@ export default {
     return {
       btnlist: [{
         id: '0101',
-        text: '今日特惠'
+        text: '今日特惠',
+        show: 'today'
       }, {
         id: '0102',
-        text: '特价门票'
+        text: '特价门票',
+        show: 'ticket'
       }, {
         id: '0103',
-        text: '一日游'
+        text: '一日游',
+        show: 'tour'
       }]
     }
   },
@@ -35,6 +38,7 @@ export default {
       }
       this.$refs.sp[index].style.background = '#17c0c8'
       this.$refs.sp[index].style.color = '#fff'
+      this.$emit('change', index)
     }
   }
 }
