@@ -1,6 +1,6 @@
 <template>
-  <div class="icons">
-     <swiper :options="swiperOption">
+  <div class="icons wrapper">
+     <swiper :options="swiperOption" v-if="showOrder">
        <swiper-slide v-for="(page,index) of pages" :key="index">
          <div class="icon" v-for="item of page" :key="item.id">
            <div class="icon-img">
@@ -9,6 +9,7 @@
            <p class="icon-desc">{{item.desc}}</p>
          </div>
        </swiper-slide>
+       <div class="swiper-pagination"  slot="pagination"></div>
      </swiper>
   </div>
 </template>
@@ -22,6 +23,7 @@ export default {
   data () {
     return {
       swiperOption: {
+        pagination: '.swiper-pagination',
         loop: true,
         autoplay: false
       }
@@ -38,6 +40,9 @@ export default {
         pages[page].push(item)
       })
       return pages
+    },
+    showOrder () {
+      return this.iconList.length
     }
   }
 }
@@ -46,6 +51,15 @@ export default {
 <style lang="stylus" scoped>
   @import '~styles/varibles.styl'
   @import '~styles/mixins.styl'
+  .wrapper >>> .swiper-pagination-bullet-active
+    background $bgColor !important
+    height 1.1rem
+    width 1.1rem
+  .wrapper >>> .swiper-pagination-bullet
+    height 1.1rem
+    width 1.1rem
+    background $lightTextColor
+    opacity 1
   .icons >>> .swiper-container
     height 0
     padding-bottom 50%
@@ -56,9 +70,7 @@ export default {
     height 0
     padding-bottom 25%
     .icon-img
-      position absolute
-      left 0
-      top 0
+      pabsoultLeft()
       right 0
       bottom 4.2rem
       text-align center

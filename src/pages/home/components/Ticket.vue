@@ -31,13 +31,11 @@ export default {
   .holiday
     margin-top 1.2rem
     .iconfont-ico
-      color #08d2c0
+      color $bgColor
       font-size 1.8rem
       margin 0 1.2rem
     .title
-      font-size 2.4rem
-      color #000
-      font-weight 900
+      bigtitleStyle()
     .holiday-icon
       margin-top 1rem
       .icon
@@ -45,12 +43,10 @@ export default {
         width 50%
         text-align center
         .icon-img
-          width 93%
-          height 85%
-          border-radius .5rem
+          imgStyle()
         .icon-desc
           text-align left
-          text-indent 1.5rem
+          text-indent $textIndent
           .icon-title
             margin-top 1rem
             font-size 1.8rem
@@ -63,8 +59,6 @@ export default {
             font-weight 300
             ellipsis()
           .icon-money
-            font-size 2.2rem
-            font-weight 900
-            color #ff7400
-            margin .5rem 0 1.2rem -.4rem
+            moneyStyle()
+
 </style>

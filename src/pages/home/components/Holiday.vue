@@ -11,8 +11,10 @@
           </div>
           <img class="icon-img" :src="item.imgUrl" alt="" >
         </div>
-        <div class="icon-text">{{item.icontext}}</div>
-        <div class="icon-money">{{item.iconmoney}}</div>
+        <div class="icon-bottom">
+          <div class="icon-text">{{item.icontext}}</div>
+          <div class="icon-money">{{item.iconmoney}}</div>
+        </div>
       </div>
 
     </div>
@@ -32,15 +34,14 @@ export default {
   @import '~styles/mixins.styl'
   @import '~styles/varibles.styl'
   .holiday
+    width 100%
     margin-top 1.2rem
     .iconfont-ico
-      color #08d2c0
+      color $bgColor
       font-size 1.8rem
       margin 0 1.2rem
     .title
-      font-size 2.4rem
-      color #000
-      font-weight 900
+      bigtitleStyle()
     .holiday-icon
       margin-top 1rem
       .icon
@@ -50,37 +51,33 @@ export default {
         .icon-content
           position relative
           .icon-img
-            width 93%
-            height 85%
-            border-radius .5rem
+            imgStyle()
             padding-bottom .06rem
           .icon-desc
             position absolute
             left 50%
             transform translateX(-50%)
             bottom .22rem
-            width 50%
-            height 35%
+            width 10rem
+            height 5rem
             background #000
             color white
             opacity 0.7
             .desc-title
-              font-size 1.8rem
-              font-weight 800
+              font-size 1.5rem
+              font-weight 700
               margin .8rem 0 .3rem 0
             .desc-text
-              font-size 1.2rem
+              margin-top .5rem
+              font-size 1rem
               color #f9d902
-        .icon-text
-          font-size 1.8rem
-          margin .5rem 1rem 0 0
-          text-indent 1.5rem
-          ellipsis()
-        .icon-money
-          text-indent 1.5rem
-          font-size 2.2rem
-          font-weight 900
-          color #ff7400
+        .icon-bottom
+          text-indent $textIndent
           text-align left
-          margin .5rem 0 1.2rem -.4rem
+          .icon-text
+            font-size 1.8rem
+            margin .5rem 1rem 0 0
+            ellipsis()
+          .icon-money
+            moneyStyle()
 </style>

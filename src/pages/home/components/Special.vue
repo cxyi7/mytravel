@@ -1,10 +1,10 @@
 <template>
   <div class="special">
-    <div class="special-icon" v-for="(item,index) of showspecial" :key="index">
+    <div class="special-icon" v-for="(item,index) of showspecial" :key="index" >
       <div class="icon-img" :key="item.id">
-        <img :src="item.imgUrl" alt="" class="img-centent">
+        <img :src="item.imgUrl" alt="" class="img-centent" ref="imgs">
       </div>
-      <div class="icon_desc">
+      <div class="icon-desc">
         <p class="desc-title">{{item.title}}</p>
         <p class="desc-text">{{item.text}}</p>
         <p class="desc-money">{{item.money}}<small>起</small></p>
@@ -26,6 +26,7 @@ export default {
   @import '~styles/mixins.styl'
   @import '~styles/varibles.styl'
   .special
+  clear both
     margin-top 1rem
     height 45rem
     .special-icon
@@ -34,26 +35,23 @@ export default {
       height 50%
       width 50%
       .icon-img
-        position absolute
-        top 0
-        left 0
+        pabsoultLeft()
         bottom 8rem
         text-align center
         .img-centent
-          height 90%
-          width 93%
-          border-radius .5rem
-      .icon_desc
+         imgStyle()
+      .icon-desc
         position absolute
         bottom 1rem
         left 0
         width 93%
-        text-indent 1.5rem
+        text-indent $textIndent
         .desc-title
           margin 0 0 0 0
           font-size 1.8rem
           color $darkTextColor
           font-weight 700
+          ellipsis()
         .desc-text
           margin .5rem 0 0 0
           padding-right .5rem
@@ -61,9 +59,5 @@ export default {
           color #666
           ellipsis()
         .desc-money
-          margin .5rem 0 0 -.4rem
-          font-size 2.2rem
-          font-weight 900
-          color #ff7400
-
+          moneyStyle()
 </style>

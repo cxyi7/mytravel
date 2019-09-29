@@ -1,16 +1,14 @@
 <template>
   <div class="footer">
-   <div class="footer-top">
-     <ul>
-       <li><a href="javascript:void(0);">Qunar.com</a></li>丨
-       <li><a href="javascript:void(0);">业务合作</a></li>丨
-       <li><a href="javascript:void(0);">加入我们</a></li>丨
-       <li><a href="javascript:void(0);">"严重违规失信"专项整治</a></li>丨
-       <li><a href="javascript:void(0);">安全中心</a></li>丨
-       <li><a href="javascript:void(0);">星骆驼公益</a></li>丨
-       <li><a href="javascript:void(0);">About Us</a></li>
-     </ul>
-   </div>
+   <ul>
+     <li><a href="javascript:void(0);">Qunar.com</a>丨</li>
+     <li><a href="javascript:void(0);">业务合作</a>丨</li>
+     <li><a href="javascript:void(0);">加入我们</a>丨</li>
+     <li><a href="javascript:void(0);">"严重违规失信"专项整治</a>丨</li>
+     <li><a href="javascript:void(0);">安全中心</a>丨</li>
+     <li><a href="javascript:void(0);">星骆驼公益</a>丨</li>
+     <li><a href="javascript:void(0);">About Us</a></li>
+   </ul>
    <div class="footer-center">
      <p>Copyright ©2019 Qunar.com</p>
      <p>(京)-非经营性-2016-0110</p>
@@ -33,25 +31,30 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+  @import '~styles/varibles.styl'
   .footer
     width 100%
-    position relative
-    .footer-top
-      ul
-        padding 0
-        text-align center
-        li
-          margin-top 4rem
-          list-style none
-          display inline-block
-          a
-            display inline-block
-            color #666
-            text-decoration none
-        li:not(:first-child)
-          margin-left -.2rem
-    .footer-center
+    clear both
+    ul
+      padding 0
       text-align center
+      li
+        margin-top 4rem
+        list-style none
+        display inline-block
+        a
+          display inline-block
+          color $lightTextColor
+          text-decoration none
+      li:not(:first-child)
+        margin-left -.2rem
+    .footer-center
+      color $lightTextColor
+      width 98%
+      text-align center
+      margin 0 auto
+      p
+        display inline-block
       img
         height 1rem
         width 1rem

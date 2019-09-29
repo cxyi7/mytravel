@@ -5,7 +5,7 @@
       :key="item.id" @click="handle(index)">
         {{item.text}}
       </span>
-      <div class="recommend-more">更多优惠</div>
+      <div class="recommend-more">更多</div>
     </div>
   </div>
 </template>
@@ -44,29 +44,32 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+  @import '~styles/varibles.styl'
+  @import '~styles/mixins.styl'
   .recommend
+    clear both
     height 3.84rem
     .recommend-content
       width 95%
-      float right
+      margin 0 auto
+      position relative
       .recommend-btn
         display inline-block
-        width 9rem
+        width 25%
         height 3.64rem
         line-height  3.64rem
         font-size 1.4rem
         text-align center
-        border .1rem solid #999999
+        border .1rem solid #999999a8
         margin-right 1rem
-        color #666
+        color $lightTextColor
         border-radius .2rem
         cursor default
       .recommend-more
-        float right
+        pabsoultRight()
         height 3.64rem
         line-height  3.64rem
         font-size 1.4rem
-        margin-right 2.6rem
-        color #999
+        color $lightTextColor
         text-decoration underline
 </style>

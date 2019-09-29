@@ -1,17 +1,14 @@
 <template>
   <div class="header">
-    <div class="header-left">
-      <span class="iconfont user-icon">&#xe62f;</span>
-    </div>
     <div class="header-center">
-      <input type="text" placeholder="搜索景点门票" class="header-center-input">
-      <span class="iconfont search-icon">&#xe632;</span>
+      <div class="center-search">
+       <span class="iconfont icon-search">&#xe632;</span>
+        <div class="icon-desc">搜索景点门票</div>
+      </div>
+      <div class="center-user">
+        <span class="iconfont icon-user">&#xe62f;</span>
+      </div>
     </div>
-    <div class="header-right">
-      城市
-      <span class="iconfont address-icon">&#xe63f;</span>
-    </div>
-
   </div>
 </template>
 
@@ -23,41 +20,38 @@ export default {
 
 <style lang="stylus" scoped>
   @import '~styles/varibles.styl'
+  @import '~styles/mixins.styl'
   .header
-    display flex
-    height 7.9rem
-    line-height 7.9rem
-    background $bgColor
-    .header-left
-      float left
-      width 7rem
-      height 100%
-      text-align center
-      .user-icon
-        font-size 3rem
+    width 100%
     .header-center
-      position relative
-      flex 1
-      height 100%
-      margin-left -2rem
-      line-height 7.9rem
-      text-align center
-      .header-center-input
-        width 32rem
-        margin 1.4rem 0
-        font-size 2rem
-        line-height 4.5rem
-        outline none
-      .search-icon
-        position absolute
-        right 2.75rem
-        font-size 2.5rem
-        color #828482
-    .header-right
-      float right
-      width 7rem
-      height 100%
-      font-size 1.7rem
-      .address-icon
-        font-size 1.9rem
+      width 95%
+      margin 2rem auto
+      height 4.4rem
+      .center-search
+        margin-left 1.5rem
+        width 83%
+        height 100%
+        line-height 4.4rem
+        float left
+        background #eeeeee
+        position relative
+        .icon-search
+          pabsoultLeft()
+          padding 0 1rem
+          font-size 2.8rem
+          color $lightTextColor
+        .icon-desc
+          margin-left 4.52rem
+          font-size 2rem
+          color $lightTextColor
+      .center-user
+        height 100%
+        line-height 4.4rem
+        float right
+        position relative
+        .icon-user
+          pabsoultRight()
+          padding 0 1rem
+          font-size 2.8rem
+          color $bgColor
 </style>

@@ -1,11 +1,11 @@
 <template>
   <div>
     <home-header></home-header>
-    <home-swiper :swiperList="swiperList"></home-swiper>
     <home-icons :iconList="iconList"></home-icons>
     <home-recommend @change="handlespecial" :btnlist="btnlist"></home-recommend>
     <home-special :showspecial="showspecial"></home-special>
     <home-holiday :holidayList="holidayList"></home-holiday>
+    <home-swiper :swiperList="swiperList"></home-swiper>
     <home-ticket :ticketList="ticketList"></home-ticket>
     <home-footer></home-footer>
   </div>

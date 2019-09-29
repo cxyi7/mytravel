@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper swiper-no-swiping">
-    <swiper :options="swiperOption" ref="mySwiper">
+    <swiper :options="swiperOption" ref="mySwiper" v-if="showOrder">
         <!-- slides -->
         <swiper-slide v-for="item of swiperList" :key="item.id">
           <img class="swiper-img" :src="item.imgUrl" >
@@ -25,6 +25,11 @@ export default {
         loop: true,
         autoplay: 3000
       }
+    }
+  },
+  computed: {
+    showOrder () {
+      return this.swiperList.length
     }
   }
 }
