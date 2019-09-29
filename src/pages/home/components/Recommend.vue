@@ -13,22 +13,21 @@
 <script>
 export default {
   name: 'HomeRecommend',
+  props: {
+    btnlist: Array
+  },
   data () {
     return {
-      btnlist: [{
-        id: '0101',
-        text: '今日特惠',
-        show: 'today'
-      }, {
-        id: '0102',
-        text: '特价门票',
-        show: 'ticket'
-      }, {
-        id: '0103',
-        text: '一日游',
-        show: 'tour'
-      }]
+      show: 0,
+      showDefault: {
+        background: '#17c0c8',
+        color: '#fff'
+      }
     }
+  },
+  updated () {
+    this.$refs.sp[0].style.background = '#17c0c8'
+    this.$refs.sp[0].style.color = '#fff'
   },
   methods: {
     handle (index) {
@@ -61,6 +60,7 @@ export default {
         margin-right 1rem
         color #666
         border-radius .2rem
+        cursor default
       .recommend-more
         float right
         height 3.64rem

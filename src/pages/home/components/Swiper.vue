@@ -15,40 +15,16 @@
 <script>
 export default {
   name: 'HomeSwiper',
+  props: {
+    swiperList: Array
+  },
   data () {
     return {
       swiperOption: {
         pagination: '.swiper-pagination',
         loop: true,
         autoplay: 3000
-      },
-      computed: {
-        swiper () {
-          return this.$refs.mySwiper.swiper
-        }
-      },
-      mounted () {
-        // current swiper instance
-        // 然后你就可以使用当前上下文内的swiper对象去做你想做的事了
-        console.log('this is current swiper instance object', this.swiper)
-        this.swiper.slideTo(3, 1000, false)
-      },
-      swiperList: [{
-        id: '00001',
-        imgUrl: 'static/swiper_img/swiper-01.jpg'
-      }, {
-        id: '00002',
-        imgUrl: 'static/swiper_img/swiper-02.jpg'
-      }, {
-        id: '00003',
-        imgUrl: 'static/swiper_img/swiper-03.jpg'
-      }, {
-        id: '00004',
-        imgUrl: 'static/swiper_img/swiper-04.jpg'
-      }, {
-        id: '00005',
-        imgUrl: 'static/swiper_img/swiper-05.jpg'
-      }]
+      }
     }
   }
 }

@@ -36,6 +36,7 @@ export default {
       .user-icon
         font-size 3rem
     .header-center
+      position relative
       flex 1
       height 100%
       margin-left -2rem
@@ -49,7 +50,7 @@ export default {
         outline none
       .search-icon
         position absolute
-        right 9.75rem
+        right 2.75rem
         font-size 2.5rem
         color #828482
     .header-right
