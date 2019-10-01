@@ -5,9 +5,11 @@
        <span class="iconfont icon-search">&#xe632;</span>
         <div class="icon-desc">搜索景点门票</div>
       </div>
-      <div class="center-user">
-        <span class="iconfont icon-user">&#xe62f;</span>
-      </div>
+      <router-link to="/user">
+        <div class="center-user">
+          <span class="iconfont icon-user">&#xe62f;</span>
+        </div>
+      </router-link>
     </div>
   </div>
 </template>
