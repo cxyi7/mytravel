@@ -7,9 +7,13 @@
        <div class="icon-imgcontent">
          <img src="static/user/user.png" alt="" class="icon-img">
        </div>
-       <span class="icon-logo">登录</span>
-       <span class="icon-logo">/</span>
-       <span class="icon-logo">注册</span>
+       <router-link to="/user/components/Login">
+         <span class="icon-logo">登录</span>
+       </router-link>
+       <span class="icon-logo" :style="{color:'#fff'}">/</span>
+       <router-link to="/user/components/Registered">
+         <span class="icon-logo">注册</span>
+       </router-link>
      </div>
      <img src="static/user/bgimg.jpg" alt="" class="bgimg">
   </div>
@@ -46,9 +50,11 @@ export default {
       width 100%
       margin 5rem 0 2rem 0
       text-align center
-      .icon-logo
-        font-size 1.4rem
-        color #fff
+      a
+        text-decoration none
+        .icon-logo
+          font-size 1.4rem
+          color #FFFFFF
       .icon-imgcontent
         centerStyle()
         border-radius 50%

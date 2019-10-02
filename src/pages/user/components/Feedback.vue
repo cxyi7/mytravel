@@ -76,7 +76,7 @@ export default {
       .icon-bottom-desc
         display inline-block
         margin-top 6em
-        color #999
+        color $lightTextColor
         -ms-user-select none
         -moz-user-select none
         -webkit-user-select none

@@ -18,7 +18,6 @@ export default {
   },
   data () {
     return {
-      show: 0,
       showDefault: {
         background: '#17c0c8',
         color: '#fff'
