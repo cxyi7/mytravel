@@ -21,6 +21,7 @@ import HomeHoliday from './components/Holiday'
 import HomeTicket from './components/Ticket'
 import HomeFooter from './components/Footer'
 import axios from 'axios'
+import { mapState } from 'vuex'
 
 export default {
   name: 'Home',
@@ -36,6 +37,7 @@ export default {
   },
   data () {
     return {
+      lastCity: '',
       holidayList: [],
       swiperList: [],
       iconList: [],
@@ -45,12 +47,15 @@ export default {
       ticketList: []
     }
   },
+  computed: {
+    ...mapState(['city'])
+  },
   methods: {
     handlespecial (index) {
       this.showspecial = this.showSpecialList[index]
     },
     getHomeInfo () {
-      axios.get('/api/index.json')
+      axios.get('/api/index.json?city=' + this.city)
         .then(this.getHomeInfoSucc)
     },
     getHomeInfoSucc (res) {
@@ -68,7 +73,14 @@ export default {
     }
   },
   mounted () {
+    this.lastCity = this.city
     this.getHomeInfo()
+  },
+  activated () {
+    if (this.lastCity !== this.city) {
+      this.lastCity = this.city
+      this.getHomeInfo()
+    }
   }
 }
 </script>

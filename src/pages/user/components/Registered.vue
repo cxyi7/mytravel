@@ -17,6 +17,7 @@
         placeholder="">
       </div>
       <div class="getvcode border">获取验证码</div>
+      <canvas @click="handleChange" ref="cas" class="canvas"></canvas>
     </div>
     <div class="empty"></div>
     <common-bottom :commnway="commnway"></common-bottom>
@@ -45,8 +46,52 @@ export default {
         'id': '03',
         'type': '验证码',
         'tips': '请输入验证码'
-      }]
+      }],
+      height: 28,
+      width: 98
     }
+  },
+  methods: {
+    getNumber (min, max) {
+      return Math.floor(Math.random() * (max - min) + min)
+    },
+    getText () {
+      let str = ''
+      let arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd',
+        'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm']
+      str += arr[parseInt(Math.random() * 36)]
+      return str
+    },
+    drawText (ctx, txt, i) {
+      ctx.fillStyle = '#000'
+      ctx.font = '2rem SimHei'
+      let x = (i + 1) * 20
+      let y = 25
+      let deg = this.getNumber(-45, 45)
+      ctx.translate(x, y)
+      ctx.rotate(deg * Math.PI / 180)
+      ctx.fillText(txt, 0, 0)
+      ctx.rotate(-deg * Math.PI / 180)
+      ctx.translate(-x, -y)
+    },
+    handleChange () {
+      let canvas = this.$refs.cas
+      let context = canvas.getContext('2d')
+      canvas.width = this.width
+      canvas.height = this.height
+      context.textBaseline = 'bottom'
+      context.fillStyle = '#FFFFFF'
+      context.fillRect(0, 0, this.width, this.height)
+      for (let i = 0; i < 4; i++) {
+        this.drawText(context, this.getText(), i)
+      }
+    }
+  },
+  mounted () {
+    for (let i in this.showData) {
+      this.$refs.ipt[i].placeholder = this.showData[i].tips
+    }
+    this.handleChange()
   }
 }
 </script>
@@ -98,6 +143,11 @@ export default {
         line-height 3rem
         padding 0 1rem
         color $lightTextColor
+      .canvas
+        position absolute
+        bottom 4.6rem
+        right 1rem
+        border 0.0625rem solid #9999994f
     .registered-top
       width 100%
       height 5rem

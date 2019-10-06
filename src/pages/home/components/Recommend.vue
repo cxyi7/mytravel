@@ -5,7 +5,9 @@
       :key="item.id" @click="handle(index)">
         {{item.text}}
       </span>
-      <div class="recommend-more">更多</div>
+      <router-link to="/city">
+        <div class="recommend-more">更多</div>
+      </router-link>
     </div>
   </div>
 </template>

@@ -2,10 +2,10 @@
   <div class="loginway">
     <div class="longinway-choose">
       <div class="choose"
-      v-for="item of showData[showChoose]" :key="item.id">
+      v-for="(item,index) of showData[showChoose]" :key="index">
         <div class="choose-right">{{item.type}}</div>
         <input type="text" class="choose-input" ref="ipt"
-        placeholder="">
+        placeholder="" :key="item.id">
         <div class="getvcode border" v-show="showtime">获取验证码</div>
       </div>
     </div>
@@ -31,11 +31,11 @@ export default {
         'type': '验证码',
         'tips': '请输入验证码'
       }], [{
-        'id': '01',
+        'id': '011',
         'type': '帐号',
         'tips': '手机号/邮箱/用户名'
       }, {
-        'id': '02',
+        'id': '012',
         'type': '密码',
         'tips': '请输入密码'
       }]]
@@ -48,7 +48,7 @@ export default {
   },
   updated () {
     for (let i in this.showData[this.showChoose]) {
-      this.$refs.ipt[i].value = this.showData[this.showChoose][i].tips
+      this.$refs.ipt[i].placeholder = this.showData[this.showChoose][i].tips
     }
   },
   watch: {
