@@ -5,6 +5,7 @@ import City from '@/pages/city/City'
 import User from '@/pages/user/User'
 import UserLogin from '@/pages/user/components/Login'
 import UserRegistered from '@/pages/user/components/Registered'
+import Detail from '@/pages/detail/Detail'
 
 Vue.use(Router)
 
@@ -29,5 +30,9 @@ export default new Router({
     path: '/user/components/Registered',
     name: 'UserRegistered',
     component: UserRegistered
+  }, {
+    path: '/detail/:id',
+    name: 'Detail',
+    component: Detail
   }]
 })

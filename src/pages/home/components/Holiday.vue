@@ -2,7 +2,13 @@
   <div class="holiday">
     <span class="iconfont iconfont-ico">&#xe601;</span>
     <span class="title">当季热门度假</span>
-    <div class="holiday-icon" v-for="(item,index) of holidayList" :key="index">
+    <router-link
+    class="holiday-icon"
+    v-for="item of holidayList"
+    :key="item.id"
+    tag="div"
+    :to="'/detail/'+ item.id"
+    >
       <div class="icon">
         <div class="icon-content">
           <div class="icon-desc">
@@ -16,8 +22,7 @@
           <div class="icon-money">{{item.iconmoney}}</div>
         </div>
       </div>
-
-    </div>
+    </router-link>
   </div>
 </template>
 
