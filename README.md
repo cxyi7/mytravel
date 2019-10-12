@@ -3,15 +3,17 @@
 - 使用v 2.5框架搭建 去哪儿网
 - 适应平板和移动端浏览器
 ***********
-![](static/show/00.png)
-![](static/show/01.png)
-![](static/show/02.png)
-![](static/show/03.png)
-![](static/show/04.png)
-![](static/show/05.png)
-![](static/show/06.png)
-![](static/show/07.png)
+![](static/show/10.png)
+![](static/show/09.png)
 ![](static/show/08.png)
+![](static/show/07.png)
+![](static/show/06.png)
+![](static/show/05.png)
+![](static/show/04.png)
+![](static/show/03.png)
+![](static/show/02.png)
+![](static/show/01.png)
+![](static/show/00.png)
 
 ## Build Setup
 
