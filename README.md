@@ -2,7 +2,15 @@
 
 - 使用v 2.5框架搭建 去哪儿网
 - 适应平板和移动端浏览器
-- 共有4个页面，首页面，用户登入/注册界面，城市选择界面一级乐园介绍界面
+[](static/show/01.png)
+[](static/show/02.png)
+[](static/show/03.png)
+[](static/show/04.png)
+[](static/show/05.png)
+[](static/show/06.png)
+[](static/show/07.png)
+[](static/show/08.png)
+
 
 ## Build Setup
 

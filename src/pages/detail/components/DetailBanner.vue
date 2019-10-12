@@ -2,13 +2,11 @@
   <div>
     <div class="banner" @click="showImg">
       <img src="static/detail/details-01.jpg" alt="" class="img-centent">
-      <router-link to="/">
-        <span class="iconfont icon-back">&#xeb99;</span>
-      </router-link>
       <div class="banner-desc">
         <div class="banner-number">
           <span class="iconfont">&#xe71b;</span>
-          10</div>
+          {{imgUrl.length}}
+        </div>
         <div class="banner-title">通天岩(AAAA景区)</div>
       </div>
       <div class="banner-bottom"></div>
@@ -54,13 +52,13 @@ export default {
       }
     }
   },
+  mounted () {
+    this.getImgInfo()
+  },
   watch: {
     imgShow () {
       this.getImgInfo()
     }
-  },
-  deactivated () {
-    this.imgShow = false
   }
 }
 </script>
@@ -75,18 +73,6 @@ export default {
     position relative
     .img-centent
       width 100%
-    .icon-back
-      position absolute
-      left 1rem
-      top 1rem
-      width 3rem
-      height 3rem
-      line-height 3rem
-      text-align center
-      border-radius 50%
-      font-size 1.6rem
-      color #FFFFFF
-      background rgba(0, 0, 0, .8)
     .banner-desc
       position absolute
       bottom 1.5rem

@@ -22,13 +22,16 @@ export default {
     return {
       showDefault: {
         background: '#17c0c8',
-        color: '#fff'
+        color: '#fff',
+        isshow: ''
       }
     }
   },
   updated () {
-    this.$refs.sp[0].style.background = '#17c0c8'
-    this.$refs.sp[0].style.color = '#fff'
+    if (!this.isshow) {
+      this.$refs.sp[0].style.background = '#17c0c8'
+      this.$refs.sp[0].style.color = '#fff'
+    }
   },
   methods: {
     handle (index) {
@@ -38,6 +41,7 @@ export default {
       }
       this.$refs.sp[index].style.background = '#17c0c8'
       this.$refs.sp[index].style.color = '#fff'
+      this.isshow = index
       this.$emit('change', index)
     }
   }

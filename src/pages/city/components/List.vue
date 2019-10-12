@@ -53,7 +53,6 @@ export default {
   },
   methods: {
     handleCityClick (city) {
-      // this.$store.dispatch('ChangeCity', city)
       this.ChangeCity(city)
       this.$router.push('/')
     },
@@ -67,8 +66,8 @@ export default {
       }
     }
   },
-  mounted () {
-    this.scroll = new Bscroll(this.$refs.wrapper, {click: true})
+  moutnted () {
+    this.scroll = new Bscroll(this.$refs.warpper, {click: true})
   }
 }
 </script>
