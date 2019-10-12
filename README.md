@@ -2,6 +2,7 @@
 
 - 使用v 2.5框架搭建 去哪儿网
 - 适应平板和移动端浏览器
+***********
 ![](static/show/00.png)
 ![](static/show/01.png)
 ![](static/show/02.png)
