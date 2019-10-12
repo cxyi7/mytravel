@@ -9,7 +9,7 @@
 [](static/show/05.png)
 [](static/show/06.png)
 [](static/show/07.png)
-[](static/show/08.png)
+[](static/show/8.png)
 
 
 ## Build Setup
